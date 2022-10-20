@@ -13,7 +13,7 @@ YOUTUBE_API_VERSION = "v3"
 youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                 developerKey=DEVELOPER_KEY)
 
-def video_search(youtube, q='自動化', max_results=100):
+def video_search(youtube, q='自動化', max_results=50):
     # q = 'Python'
     # max_results = 50
     response = youtube.search().list(
@@ -39,7 +39,7 @@ def video_search(youtube, q='自動化', max_results=100):
     df_video = pd.DataFrame(items_id)
     return df_video
 
-def get_results(df_video, threshold=100000):
+def get_results(df_video, threshold=50000):
 #     df_video = video_search(youtube, q='Python 自動化', max_results=30)
     channel_ids = df_video['channel_id'].unique().tolist()
 
