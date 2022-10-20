@@ -39,7 +39,7 @@ def video_search(youtube, q='自動化', max_results=100):
     df_video = pd.DataFrame(items_id)
     return df_video
 
-def get_results(df_video, threshold=50000):
+def get_results(df_video, threshold=100000):
 #     df_video = video_search(youtube, q='Python 自動化', max_results=30)
     channel_ids = df_video['channel_id'].unique().tolist()
 
