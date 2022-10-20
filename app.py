@@ -17,7 +17,7 @@ def video_search(youtube, q='自動化', max_results=50):
     # q = 'Python'
     # max_results = 50
     response = youtube.search().list(
-        q=q+ '#shorts',
+        q=q,
         # idは不要なので削除
         part="snippet",
         #視聴回数が多い順に取得
